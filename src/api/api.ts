@@ -6,3 +6,10 @@ export const getAuthorizationToken = (username: string, password: string) => {
     body: JSON.stringify({ username, password }),
   });
 };
+
+export const getServerDataList = (token: string) => {
+  return fetch("https://playground.tesonet.lt/v1/servers", {
+    method: "GET",
+    headers: { "Content-Type": "application/json", Authorization: token },
+  });
+};
