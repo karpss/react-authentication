@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React,{useEffect, useState} from "react";
-import "./App.css";
+import styles from './App.module.css';
 import Navbar from "./components/Navbar/Navbar"
 import Login from "./components/Login/Login";
 import DataList from "./components/DataList/DataList";
@@ -39,7 +39,7 @@ function App() {
   }
   console.log(token);
   return (
-    <div className="App">
+    <div className={styles.app}>
       <Navbar loggedIn={!!token}/>
       {token ? (
         <DataList />

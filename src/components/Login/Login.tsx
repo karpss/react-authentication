@@ -1,5 +1,6 @@
 /* eslint-disable */
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState, useEffect, useCallback} from 'react';
+import styles from './Login.module.css';
 
 type LoginProps = {
     onSubmit: (username: string, password: string) => void;
@@ -37,7 +38,7 @@ function Login({onSubmit, loginErrorMessage}: LoginProps) {
       //console.log(username);
       //console.log(password);
     return (
-      <div className='loginForm'>
+      <div className={styles.loginForm}>
         <form onSubmit={(e) => handleSubmit(e)}>
         <input
         type="text"

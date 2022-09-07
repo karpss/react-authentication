@@ -2,6 +2,7 @@
 import React from 'react';
 import {tokenReset} from "../../redux/authorizationSlice";
 import {useAppDispatch} from "../../hooks/typeManagementHook";
+import styles from './Navbar.module.css';
 
 type NavbarProps = {
 loggedIn: boolean;
@@ -16,9 +17,9 @@ function Navbar({loggedIn}: NavbarProps) {
   };
 
   return (
-    <div className="navbar-container">
-      <h4>Server Locations</h4>
-      {loggedIn && <button onClick={logOut}>Log Out</button>}
+    <div className={styles.navbar}>
+      <h2 className={styles.header}>Server Locations</h2>
+      {loggedIn && <button className={styles.logoutButton} onClick={logOut}>Log Out</button>}
     </div>
   );
 }

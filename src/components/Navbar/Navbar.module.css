@@ -1,0 +1,22 @@
+.navbar{
+    margin-top: 0em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.header{
+    color: #fff;
+    font-family: cursive;
+}
+
+.logoutButton{
+position:absolute;
+width:100px;
+padding:10px;
+background-color:whitesmoke;
+right: 0px;
+    
+}
