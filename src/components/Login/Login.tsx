@@ -44,15 +44,17 @@ function Login({onSubmit, loginErrorMessage}: LoginProps) {
         type="text"
         placeholder="Username"
         onChange={(event) => handleInputChange(setUsername(event?.target.value))}
+        className={styles.loginInput}
         />
         <input
         type="password"
         placeholder="Password"
         onChange={(event) => handleInputChange(setPassword(event?.target.value))}
+        className={styles.loginInput}
         
         />
         <p>{loginErrorMessage}</p>
-        <button type="submit" disabled={!isInputValid}>Login</button>
+        <button className={styles.loginButton} type="submit" disabled={!isInputValid}>Login</button>
         </form>
       </div>
     );

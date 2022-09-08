@@ -5,3 +5,20 @@
     flex-direction: column;
     margin-top: 10em;
 }
+
+.loginInput{
+    background-color: transparent;
+    border: 1px solid #010708;
+    color: #010708;
+    border-radius: 0.25rem;
+    display: block;
+    padding: 16px;
+    margin: 16px 0;
+    width: 350px;
+    min-width: 250px;
+}
+
+.loginButton{
+width:120px;
+padding:10px;
+}
