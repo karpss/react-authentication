@@ -5,6 +5,7 @@ import {tokenSelect} from "../../redux/authorizationSlice";
 import {useAppDispatch, useAppSelector} from "../../hooks/typeManagementHook";
 import {setServerDataList, selectServerDataList} from "../../redux/serverDataListSlice";
 import DataTable from '../DataTable/DataTable';
+import styles from './DataList.module.css';
 
 function DataList ()  {
 const token = useAppSelector(tokenSelect);
@@ -38,11 +39,12 @@ useEffect(() => {
 
 
   return (
-    <div>
+    <div className={styles.listContainer}>
       <input
           type="text"
           onChange={(event) => setSearch(event?.target.value)}
           placeholder="Search"
+          className={styles.listSearch}
         />
         {dataListError ? (
         <p>{dataListError}</p>

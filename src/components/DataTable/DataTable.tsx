@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, {useState} from 'react';
+import styles from './DataTable.module.css';
 
 enum Sort {
     None,
@@ -66,15 +67,15 @@ function DataTable({serverDataList, search}:DataTableProps) {
           <tr
             key={index}
           >
-            <td>{server.name}</td>
-            <td>{server.distance}</td>
+            <td className={styles.datatableRow}>{server.name}</td>
+            <td className={styles.datatableRow}>{server.distance}</td>
           </tr>
         ));
       };
 
 
   return (
-    <div>
+    <div className={styles.datatableContainer}>
         {filteredServerDataList.length ? (
         <table cellSpacing="0">
           <thead>
@@ -82,20 +83,20 @@ function DataTable({serverDataList, search}:DataTableProps) {
               <th>
                 NAME:{" "}
                 <button
-                  className="server-table-sort"
+                  className={styles.sortButton}
                   onClick={sortByName}
                   
                 >
-                  Sort By Name
+                  Sort By Name ↑↓
                   </button>
               </th>
               <th>
                 DISTANCE:{" "}
                 <button
-                  className="server-table-sort"
+                  className={styles.sortButton}
                   onClick={sortByDistance}
                 >
-                  Sort By Distance
+                  Sort By Distance ↑↓
                   </button>
               </th>
             </tr>
@@ -105,7 +106,7 @@ function DataTable({serverDataList, search}:DataTableProps) {
           </tbody>
         </table>
       ) : (
-        <p className="server-table-no-data">
+        <p className="">
           Servers not found.
         </p>
       )}

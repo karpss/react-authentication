@@ -1,24 +1,19 @@
-.loginForm{
+.listContainer{
     display:flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 10em;
+    margin-top: 2em;
 }
 
-.loginInput{
+.listSearch{
     background-color: transparent;
-    border: 0.06em solid #010708;
+    border: 1px solid #010708;
     color: #010708;
     border-radius: 0.25rem;
     display: block;
     padding: 16px;
-    margin: 16px 0;
+    margin-bottom: 4em;
     width: 250px;
     min-width: 150px;
-}
-
-.loginButton{
-width:120px;
-padding:10px;
 }
