@@ -1,32 +1,29 @@
-/* eslint-disable */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface serverDataListSliceState {
-    servers: { name: string; distance: number }[];
+export interface ServerDataListSliceState {
+  servers: { name: string; distance: number }[];
 }
 
-const initialState: serverDataListSliceState = {
-    servers: []
-}
+const initialState: ServerDataListSliceState = {
+  servers: [],
+};
 
 export const serverDataListSlice = createSlice({
-name: "serverDataList",
-initialState,
-reducers: {
+  name: "serverDataList",
+  initialState,
+  reducers: {
     setServerDataList: (
       state,
-      action: PayloadAction<Array<{ name: string; distance: number }>>
+      action: PayloadAction<Array<{ name: string; distance: number }>>,
     ) => {
       state.servers = action.payload;
     },
   },
-
-
-    
 });
 
 export const { setServerDataList } = serverDataListSlice.actions;
 
-export const selectServerDataList = (state: RootState) => state.serverDataList.servers;
+export const selectServerDataList = (state: RootState) =>
+  state.serverDataList.servers;
 
 export default serverDataListSlice.reducer;

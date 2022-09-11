@@ -1,17 +1,15 @@
-/* eslint-disable */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-//import { RootState } from "./store";
 
 export interface AuthorizationSliceState {
-    token: string | null;
+  token: string | null;
 }
 
 const initialState: AuthorizationSliceState = {
-    token: null,
+  token: null,
 };
 
 export const authorizationSlice = createSlice({
-    name: "authorization",
+  name: "authorization",
   initialState,
   reducers: {
     tokenAssign: (state, action: PayloadAction<string>) => {
@@ -21,7 +19,7 @@ export const authorizationSlice = createSlice({
       state.token = null;
     },
   },
-})
+});
 
 export const { tokenAssign, tokenReset } = authorizationSlice.actions;
 
