@@ -25,9 +25,8 @@ function Login({ onSubmit, loginErrorMessage }: LoginProps) {
       onSubmit(username, password);
     }
   };
-
   const handleInputChange = (e: any) => {
-    setIsInputValid(e.validateInput());
+    setIsInputValid(e?.validateInput());
   };
 
   useEffect(() => {

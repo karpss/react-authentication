@@ -5,7 +5,8 @@ import Navbar from "../Navbar";
 import { Provider } from "react-redux";
 import { store } from "../../../redux/store";
 
-test('renders header title', () => {
+describe("Navbar", () => {
+it('renders header title', () => {
   render(
     <Provider store={store}>
   <Navbar loggedIn={false} />
@@ -14,11 +15,12 @@ test('renders header title', () => {
   expect(headerElement).toBeInTheDocument();
 });
 
-test('renders button', () => {
+it('renders logout button', () => {
   render(
     <Provider store={store}>
   <Navbar loggedIn={true} />
   </Provider>);
   const buttonElement = screen.getByText(/Log Out/i);
   expect(buttonElement).toBeInTheDocument();
+});
 });
