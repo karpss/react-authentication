@@ -1,19 +1,18 @@
-.sortButton{
-width: 15em
+.sortButton {
+    width: 15em
 }
 
-.datatableContainer{
-    
-border-radius: 0.25em;
-display: flex;
-flex-direction: column;
-background-color: #808080;
- 
-    
+.datatableContainer {
+
+    border-radius: 0.25em;
+    display: flex;
+    flex-direction: column;
+    background-color: #808080;
+
+
 }
 
-.datatableRow{
+.datatableRow {
     padding: 0.5em;
     border-bottom: 0.31em solid #d7d7d7;
 }
-

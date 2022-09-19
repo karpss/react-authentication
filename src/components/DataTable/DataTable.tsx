@@ -1,4 +1,4 @@
-import React, { useId, useState } from "react";
+import React, { useState } from "react";
 import styles from "./DataTable.module.css";
 
 enum Sort {
@@ -16,7 +16,6 @@ type DataTableProps = {
 
 function DataTable({ serverDataList, search }: DataTableProps) {
   const [sortOption, setSortOption] = useState(Sort.None);
-  const ID = useId();
 
   const sortByName = () => {
     if (sortOption !== Sort.AZ) {
@@ -59,7 +58,7 @@ function DataTable({ serverDataList, search }: DataTableProps) {
 
   const table = (dataList: Server[]) => {
     return dataList.map((server) => (
-      <tr key={ID}>
+      <tr key={server.distance}>
         <td className={styles.datatableRow}>{server.name}</td>
         <td className={styles.datatableRow}>{server.distance}</td>
       </tr>

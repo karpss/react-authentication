@@ -19,7 +19,7 @@ function Login({ onSubmit, loginErrorMessage }: LoginProps) {
     return validInput;
   }, [username, password]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateInput()) {
       onSubmit(username, password);
@@ -36,22 +36,30 @@ function Login({ onSubmit, loginErrorMessage }: LoginProps) {
   return (
     <div className={styles.loginForm}>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={(event) =>
-            handleInputChange(setUsername(event?.target.value))
-          }
-          className={styles.loginInput}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(event) =>
-            handleInputChange(setPassword(event?.target.value))
-          }
-          className={styles.loginInput}
-        />
+        <label htmlFor="Username">
+          Username
+          <input
+            type="text"
+            aria-describedby="enter-username-here"
+            placeholder="Username"
+            onChange={(event) =>
+              handleInputChange(setUsername(event?.target.value))
+            }
+            className={styles.loginInput}
+          />
+        </label>
+        <label htmlFor="Password">
+          Password
+          <input
+            type="password"
+            aria-describedby="user-password-help"
+            placeholder="Password"
+            onChange={(event) =>
+              handleInputChange(setPassword(event?.target.value))
+            }
+            className={styles.loginInput}
+          />
+        </label>
         <p>{loginErrorMessage}</p>
         <button
           className={styles.loginButton}

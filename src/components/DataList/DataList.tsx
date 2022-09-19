@@ -38,6 +38,7 @@ function DataList() {
         placeholder="Search"
         className={styles.listSearch}
       />
+
       {dataListError ? (
         <p>{dataListError}</p>
       ) : (
